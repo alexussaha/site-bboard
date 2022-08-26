@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <title>{% block title %} Главная {% endblock %} - Доска объявлений</title>
+    <title>{% block title %} Р“Р»Р°РІРЅР°СЏ {% endblock %} - Р”РѕСЃРєР° РѕР±СЉСЏРІР»РµРЅРёР№</title>
     {% bootstrap_css %}
     <link rel="stylesheet" type="text/css"
           href="{% static 'main/style.css' %}" />
@@ -15,37 +15,37 @@
 
 <body class="container-fluid">
     <header class="mb-4">
-        <h1 class="display-1 text-center">Объявление</h1>
+        <h1 class="display-1 text-center">РћР±СЉСЏРІР»РµРЅРёРµ</h1>
     </header>
     <div class="row">
         <ul class="col nav justify-content-end border">
-            <li class="nav-item"><a class="nav-link" href="#">Регистрация</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Р РµРіРёСЃС‚СЂР°С†РёСЏ</a></li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"
-                                             role="button" aria-haspopup="true" aria-expanded="false">Профиль</a>
+                                             role="button" aria-haspopup="true" aria-expanded="false">РџСЂРѕС„РёР»СЊ</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Мои объявления</a>
-                    <a class="dropdown-item" href="#">Изменить личные данные</a>
-                    <a class="dropdown-item" href="#">Изменить пароль</a>
+                    <a class="dropdown-item" href="#">РњРѕРё РѕР±СЉСЏРІР»РµРЅРёСЏ</a>
+                    <a class="dropdown-item" href="#">РР·РјРµРЅРёС‚СЊ Р»РёС‡РЅС‹Рµ РґР°РЅРЅС‹Рµ</a>
+                    <a class="dropdown-item" href="#">РР·РјРµРЅРёС‚СЊ РїР°СЂРѕР»СЊ</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Выйти</a>
+                    <a class="dropdown-item" href="#">Р’С‹Р№С‚Рё</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Удалить</a>
+                    <a class="dropdown-item" href="#">РЈРґР°Р»РёС‚СЊ</a>
                 </div>
             </li>
-            <li class="nav-item"><a class="nav-link" href="#">Вход</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Р’С…РѕРґ</a></li>
         </ul>
     </div>
     <div class="row">
         <nav class="col-md-auto nav flex-column border">
-            <a class="nav-link root" href="{% 'main:index' %}">Главная</a>
-            <span class="nav-link root font-weight-bold">Недвижимость</span>
-            <a class="nav-link" href="#">Жильё</a>
-            <a class="nav-link" href="#">Склады</a>
-            <a class="nav-link" href="#">Гаоажи</a>
-            <span class="nav-link root font-weight-bold">Транспорт</span>
-            <a class="nav-link" href="#">Легковой</a>
-            <a class="nav-link" href="#">Грузовой</a>
+            <a class="nav-link root" href="{% url 'main:index' %}">Р“Р»Р°РІРЅР°СЏ</a>
+            <span class="nav-link root font-weight-bold">РќРµРґРІРёР¶РёРјРѕСЃС‚СЊ</span>
+            <a class="nav-link" href="#">Р–РёР»СЊС‘</a>
+            <a class="nav-link" href="#">РЎРєР»Р°РґС‹</a>
+            <a class="nav-link" href="#">Р“Р°СЂР°Р¶Рё</a>
+            <span class="nav-link root font-weight-bold">РўСЂР°РЅСЃРїРѕСЂС‚</span>
+            <a class="nav-link" href="#">Р›РµРіРєРѕРІРѕР№</a>
+            <a class="nav-link" href="#">Р“СЂСѓР·РѕРІРѕР№</a>
         </nav>
         <section class="col border py-2">
             {% bootstrap_messages %}
