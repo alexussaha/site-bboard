@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, Http404
 from django.template import TemplateDoesNotExist
 from django.template.loader import get_template
-from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView
+from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView, PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import UpdateView, CreateView, DeleteView
@@ -74,6 +74,22 @@ class BBPasswordChangeView(SuccessMessageMixin, LoginRequiredMixin, PasswordChan
     template_name = 'main/password_change.html'
     success_url = reverse_lazy('main:profile')
     send_message = 'Пользователь успешно изменен'
+
+class BBPasswordResetView(PasswordResetView):
+    template_name = 'main/password_reset.html'
+    subject_template_name = 'email/reset_letter_subject.txt'
+    email_template_name = 'email/reset_letter_body.txt'
+    success_url = reverse_lazy('main:password_reset_done')
+
+class BBPasswordResetDoneView(PasswordResetDoneView):
+    template_name = 'main/password_reset_done.html'
+
+class BBPasswordResetConfirmView(PasswordResetConfirmView):
+    template_name = 'main/password_reset_confirm.html'
+    success_url = reverse_lazy('main:password_reset_complete')
+    
+class BBPasswordResetCompleteView(PasswordResetCompleteView):
+    template_name = 'main/password_reset_complete.html'
 
 def index(request):
     return render(request, 'main/index.html')

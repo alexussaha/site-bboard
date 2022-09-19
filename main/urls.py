@@ -1,6 +1,8 @@
 from django.urls import path
 
-from .views import index, other_page, BBLoginView, profile, BBLogoutView, ChangeUserInfoView, BBPasswordChangeView, RegisterUserView, RegisterDoneView, user_activate
+from .views import index, other_page, BBLoginView, profile, BBLogoutView, ChangeUserInfoView, BBPasswordChangeView,\
+   RegisterUserView, RegisterDoneView, user_activate, BBPasswordResetView, BBPasswordResetDoneView, BBPasswordResetCompleteView,\
+   BBPasswordResetConfirmView
 from .views import DeleteUserView
 
 app_name = 'main'
@@ -16,5 +18,15 @@ urlpatterns = [
     path('accounts/register', RegisterUserView.as_view(), name='register'),
     path('accounts/register/activate/<str:sign>/', user_activate,
                                       name='register_activate'),
-    path('accounts/profile/delete', DeleteUserView.as_view(), name='profile_delete')
+    path('accounts/profile/delete', DeleteUserView.as_view(), name='profile_delete'),
+    path('accounts/password/reset/done/', BBPasswordResetDoneView.as_view(),
+                                          name='password_reset_done'),
+    path('accounts/password/reset/', BBPasswordResetView.as_view(),
+                                     name='password_reset'),
+    path('accounts/password/confirm/complete/',
+                                    BBPasswordResetCompleteView.as_view(),
+                                    name='password_reset_complete'),
+    path('accounts/password/confirm/<uidb64>/<token>/',
+                                    BBPasswordResetConfirmView.as_view(),
+                                    name='password_reset_confirm')
     ]
